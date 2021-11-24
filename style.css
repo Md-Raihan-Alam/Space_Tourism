@@ -51,12 +51,16 @@
   background-color: #a8a8a8;
   -webkit-transform: translateX(40px);
           transform: translateX(40px);
+  z-index: 33333;
 }
 
 .container .navbar .menu {
   width: 830px;
   height: 96px;
   position: relative;
+  backdrop-filter: blur(7px) saturate(200%);
+  -webkit-backdrop-filter: blur(7px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.12);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,6 +93,30 @@
           align-items: center;
 }
 
+.container .navbar .menu .list .one .underline {
+  display: none;
+  width: 70px;
+  height: 3px;
+}
+
+.container .navbar .menu .list .two .underline {
+  display: none;
+  width: 127px;
+  height: 3px;
+}
+
+.container .navbar .menu .list .three .underline {
+  display: none;
+  width: 71px;
+  height: 3px;
+}
+
+.container .navbar .menu .list .four .underline {
+  display: none;
+  width: 127px;
+  height: 3px;
+}
+
 .container .navbar .menu .list .option {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,10 +131,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.container .navbar .menu .list .option [class^="underline"] {
+  position: absolute;
+  top: 54px;
+  background-color: #ffffff;
+}
+
+.container .navbar .menu .list .option .active {
+  display: block;
 }
 
 .container .navbar .menu .list .option .num {
-  padding-right: 10px;
+  padding-right: 6px;
 }
 
 .container .navbar .menu .list .option .text,
@@ -114,15 +153,8 @@
   color: #ffffff;
 }
 
-.container .navbar .menu::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(221, 215, 215, 0.5);
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
+.container .navbar .menu .list .option .text:hover,
+.container .navbar .menu .list .option .num:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
