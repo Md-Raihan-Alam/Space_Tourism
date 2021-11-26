@@ -7,7 +7,7 @@
           box-sizing: border-box;
 }
 
-body {
+.homeImage {
   height: 100vh;
   background-image: url("assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
@@ -15,14 +15,33 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
+  .homeImage {
     background-image: url("assets/home/background-home-tablet.jpg");
   }
 }
 
 @media (max-width: 375px) {
-  body {
+  .homeImage {
     background-image: url("assets/home/background-home-mobile.jpg");
+  }
+}
+
+.destinationImage {
+  height: 100vh;
+  background-image: url("assets/destination/background-destination-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@media (max-width: 768px) {
+  .destinationImage {
+    background-image: url("assets/destination/background-destination-tablet.jpg");
+  }
+}
+
+@media (max-width: 375px) {
+  .destinationImage {
+    background-image: url("assets/destination/background-destination-mobile.jpg");
   }
 }
 
@@ -550,5 +569,161 @@ body {
 .result_section .result_container .exp_img .exp_box:hover {
   -webkit-box-shadow: 0px 0px 0px 40px #ffffff25;
           box-shadow: 0px 0px 0px 40px #ffffff25;
+}
+
+.result_section .planetSection {
+  width: 90%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.result_section .planetSection .planerWelcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.result_section .planetSection .planerWelcome .welcomeText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transform: translateX(100px) translateY(-90px);
+          transform: translateX(100px) translateY(-90px);
+}
+
+.result_section .planetSection .planerWelcome .welcomeText .num {
+  margin-right: 20px;
+  color: #ffffff3d;
+}
+
+.result_section .planetSection .planerWelcome .welcomeText .text {
+  color: #ffffff;
+}
+
+.result_section .planetSection .planerWelcome .welcomeText .num,
+.result_section .planetSection .planerWelcome .welcomeText .text {
+  font-size: clamp(24px, 1px, 28px);
+  word-spacing: 4.75px;
+  font-family: "Bellefair", serif;
+}
+
+.result_section .planetSection .planerWelcome .planet {
+  width: 445px;
+  height: 445px;
+  -webkit-transform: translateX(150px) translateY(-50px);
+          transform: translateX(150px) translateY(-50px);
+}
+
+.result_section .plantOpDesc .planetOpt {
+  width: 285.5px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 2.35px;
+  font-family: "Barlow Condensed", sans-serif;
+  -webkit-transform: translateX(30px) translateY(-200px);
+          transform: translateX(30px) translateY(-200px);
+}
+
+.result_section .plantOpDesc .planetOpt .planet {
+  position: relative;
+}
+
+.result_section .plantOpDesc .planetOpt .planet:hover {
+  cursor: pointer;
+}
+
+.result_section .plantOpDesc .planetOpt .planet:hover .underline {
+  display: block;
+  background-color: #ffffffbe;
+}
+
+.result_section .plantOpDesc .planetOpt .one .underline {
+  display: none;
+  width: 41px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 30px;
+  left: -1px;
+}
+
+.result_section .plantOpDesc .planetOpt .two .underline {
+  display: none;
+  width: 41px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 30px;
+  left: -1px;
+}
+
+.result_section .plantOpDesc .planetOpt .three .underline {
+  display: none;
+  width: 56px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 30px;
+  left: -1px;
+}
+
+.result_section .plantOpDesc .planetOpt .four .underline {
+  display: none;
+  width: 43px;
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 30px;
+  left: -1px;
+}
+
+.result_section .plantOpDesc .planetOpt .active .underline {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

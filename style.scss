@@ -23,7 +23,7 @@ $mobile-size: 375px;
   padding: 0;
   box-sizing: border-box;
 }
-body {
+.homeImage {
   height: 100vh;
   background-image: url("assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
@@ -33,6 +33,18 @@ body {
   }
   @include mobileContent {
     background-image: url("assets/home/background-home-mobile.jpg");
+  }
+}
+.destinationImage {
+  height: 100vh;
+  background-image: url("assets/destination/background-destination-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  @include tabContent {
+    background-image: url("assets/destination/background-destination-tablet.jpg");
+  }
+  @include mobileContent {
+    background-image: url("assets/destination/background-destination-mobile.jpg");
   }
 }
 .container {
@@ -303,6 +315,107 @@ body {
         transition: box-shadow 0.5s;
         &:hover {
           box-shadow: 0px 0px 0px 40px #ffffff25;
+        }
+      }
+    }
+  }
+  .planetSection {
+    width: 90%;
+    height: auto;
+    @include flexDesign(row, flex-start, flex-start);
+    .planerWelcome {
+      @include flexDesign(column, flex-start, flex-start);
+      .welcomeText {
+        @include flexDesign(row, flex-start, flex-start);
+        transform: translateX(100px) translateY(-90px);
+        .num {
+          margin-right: 20px;
+          color: #ffffff3d;
+        }
+        .text {
+          color: #ffffff;
+        }
+        .num,
+        .text {
+          font-size: clamp(24px, 1px, 28px);
+          word-spacing: 4.75px;
+          font-family: "Bellefair", serif;
+        }
+      }
+      .planet {
+        width: 445px;
+        height: 445px;
+        transform: translateX(150px) translateY(-50px);
+      }
+    }
+  }
+  .plantOpDesc {
+    .planetOpt {
+      width: 285.5px;
+      height: 34px;
+      @include flexDesign(row, space-between, flex-start);
+      color: #ffffff;
+      font-size: 16px;
+      letter-spacing: 2.35px;
+      font-family: "Barlow Condensed", sans-serif;
+      transform: translateX(30px) translateY(-200px);
+      .planet {
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          .underline {
+            display: block;
+            background-color: #ffffffbe;
+          }
+        }
+      }
+      .one {
+        .underline {
+          display: none;
+          width: 41px;
+          height: 3px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 30px;
+          left: -1px;
+        }
+      }
+      .two {
+        .underline {
+          display: none;
+          width: 41px;
+          height: 3px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 30px;
+          left: -1px;
+        }
+      }
+      .three {
+        .underline {
+          display: none;
+          width: 56px;
+          height: 3px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 30px;
+          left: -1px;
+        }
+      }
+      .four {
+        .underline {
+          display: none;
+          width: 43px;
+          height: 3px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 30px;
+          left: -1px;
+        }
+      }
+      .active {
+        .underline {
+          display: block;
         }
       }
     }
