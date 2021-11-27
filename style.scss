@@ -343,8 +343,8 @@ $mobile-size: 375px;
         }
       }
       .planet {
-        width: 445px;
-        height: 445px;
+        width: 400px;
+        height: 400px;
         transform: translateX(150px) translateY(-50px);
       }
     }
@@ -358,7 +358,7 @@ $mobile-size: 375px;
       font-size: 16px;
       letter-spacing: 2.35px;
       font-family: "Barlow Condensed", sans-serif;
-      transform: translateX(30px) translateY(-200px);
+      transform: translateX(0px) translateY(-180px);
       .planet {
         position: relative;
         &:hover {
@@ -417,6 +417,48 @@ $mobile-size: 375px;
         .underline {
           display: block;
         }
+      }
+    }
+  }
+  .currentPlanetName {
+    font-size: 100px;
+    font-family: "Bellefair", serif;
+    color: #ffffff;
+    transform: translateX(0px) translateY(-130px);
+  }
+  .currentPlanetDesc {
+    // font-family: "Barlow Condensed", sans-serif;
+    text-align: justify;
+    color: white;
+    width: 50%;
+    transform: translateX(0px) translateY(-100px);
+  }
+  .border_line {
+    width: 60%;
+    height: 2px;
+    background-color: #383b4b;
+    transform: translateY(-20px);
+  }
+  .planetInfo {
+    width: 60%;
+    height: auto;
+    @include flexDesign(row, space-between, flex-start);
+    // font-family: "Bellefair", serif;
+    .planetDst,
+    .planetTime {
+      height: 50px;
+      @include flexDesign(column, space-between, flex-start);
+      .dstDes,
+      .timeDesc {
+        font-size: 14px;
+        font-family: "Barlow Condensed", sans-serif;
+        color: #d0d6f9;
+      }
+      .dstNum,
+      .timeNum {
+        font-size: 28px;
+        font-family: "Bellefair", serif;
+        color: #ffffff;
       }
     }
   }
