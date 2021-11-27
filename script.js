@@ -64,19 +64,70 @@ function updateInfo(data){
     }else if(data==="2"){
         document.body.className="";
         document.body.className="destinationImage"
-        // updateSection.innerHTML=``;
+        destinationUpdate();
     }else{
         document.body.className="";
         // updateSection.innerHTML="";
     }
 }
-updateInfo('2');
-let planetMenu=document.querySelectorAll('.planetOpt .planet');
-planetMenu.forEach((e)=>{
-    e.addEventListener('click',(e2)=>{
-        planetMenu.forEach((e)=>{
-            e.classList.remove('active');
+updateInfo('1');
+function destinationUpdate(){
+    updateSection.innerHTML=`
+    <div class="planetSection">
+            <div class="planerWelcome">
+                <div class="welcomeText">
+                    <div class="num">01</div>
+                    <div class="text">PICK YOUR DESTINATION</div>
+                </div>
+                <div class="planet">
+                    <img src="assets/destination/image-moon.webp" class="planetSize" alt="Moon"/>
+                </div>
+            </div>
+        </div>
+        <div class="plantOpDesc">
+            <div class="planetOpt">
+                <div class="planet one active">
+                    <div class="planetName">MOON</div>
+                    <div class="underline"></div>
+                </div>
+                <div class="planet two">
+                    <div class="planetName">MARS</div>
+                    <div class="underline"></div>
+                </div>
+                <div class="planet three">
+                    <div class="planetName">EUROPA</div>
+                    <div class="underline"></div>
+                </div>
+                <div class="planet four">
+                    <div class="planetName">TITAN</div>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="currentPlanetName">MOON</div>
+            <div class="currentPlanetDesc">
+                See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back
+                refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+            </div>
+            <div class="border_line"></div>
+            <div class="planetInfo">
+                <div class="planetDst">
+                    <div class="dstDes">AVG. DISTANCE</div>
+                    <div class="dstNum">384,000 KM</div>
+                </div>
+                <div class="planetTime">
+                    <div class="timeDesc">EST. TRAVEL TIME</div>
+                    <div class="timeNum"> 3 DAYS</div>
+                </div>
+            </div>
+        </div>
+    `;
+    let planetMenu=document.querySelectorAll('.planetOpt .planet');
+    planetMenu.forEach((e)=>{
+        e.addEventListener('click',(e2)=>{
+            planetMenu.forEach((e)=>{
+                e.classList.remove('active');
+            });
+            e2.target.parentNode.classList.add('active');
         });
-        e2.target.parentNode.classList.add('active');
     });
-});
+}
