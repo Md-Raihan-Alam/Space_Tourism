@@ -324,6 +324,7 @@ $mobile-size: 375px;
     height: auto;
     @include flexDesign(row, flex-start, flex-start);
     .planerWelcome {
+      width: 50%;
       @include flexDesign(column, flex-start, flex-start);
       .welcomeText {
         @include flexDesign(row, flex-start, flex-start);
@@ -343,24 +344,33 @@ $mobile-size: 375px;
         }
       }
       .planet {
-        width: 400px;
-        height: 400px;
-        transform: translateX(150px) translateY(-50px);
+        .planetSize {
+          width: 100%;
+          height: 400px;
+          transform: translateX(120px) translateY(-50px);
+          @include tabContent {
+            width: 280px;
+            height: 280px;
+            transform: translateX(0px) translateY(0px);
+          }
+        }
       }
     }
   }
   .plantOpDesc {
+    width: 50%;
     .planetOpt {
-      width: 285.5px;
+      width: 55%;
       height: 34px;
       @include flexDesign(row, space-between, flex-start);
       color: #ffffff;
       font-size: 16px;
       letter-spacing: 2.35px;
       font-family: "Barlow Condensed", sans-serif;
-      transform: translateX(0px) translateY(-180px);
+      transform: translateX(-90px) translateY(-450%);
       .planet {
         position: relative;
+        margin-right: 20px;
         &:hover {
           cursor: pointer;
           .underline {
@@ -421,32 +431,33 @@ $mobile-size: 375px;
     }
   }
   .currentPlanetName {
+    width: 100%;
     font-size: 100px;
     font-family: "Bellefair", serif;
     color: #ffffff;
-    transform: translateX(0px) translateY(-130px);
+    transform: translateX(-90px) translateY(-130px);
   }
   .currentPlanetDesc {
-    // font-family: "Barlow Condensed", sans-serif;
     text-align: justify;
     color: white;
-    width: 50%;
-    transform: translateX(0px) translateY(-100px);
+    width: 80%;
+    transform: translateX(-90px) translateY(-100px);
   }
   .border_line {
     width: 60%;
     height: 2px;
     background-color: #383b4b;
-    transform: translateY(-20px);
+    transform: translateX(-90px) translateY(-20px);
   }
   .planetInfo {
     width: 60%;
     height: auto;
+    transform: translateX(-90px);
     @include flexDesign(row, space-between, flex-start);
-    // font-family: "Bellefair", serif;
     .planetDst,
     .planetTime {
       height: 50px;
+      margin-right: 20px;
       @include flexDesign(column, space-between, flex-start);
       .dstDes,
       .timeDesc {
@@ -459,6 +470,7 @@ $mobile-size: 375px;
         font-size: 28px;
         font-family: "Bellefair", serif;
         color: #ffffff;
+        text-transform: uppercase;
       }
     }
   }

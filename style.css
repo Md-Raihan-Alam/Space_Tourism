@@ -590,6 +590,7 @@
 }
 
 .result_section .planetSection .planerWelcome {
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -639,15 +640,28 @@
   font-family: "Bellefair", serif;
 }
 
-.result_section .planetSection .planerWelcome .planet {
-  width: 400px;
+.result_section .planetSection .planerWelcome .planet .planetSize {
+  width: 100%;
   height: 400px;
-  -webkit-transform: translateX(150px) translateY(-50px);
-          transform: translateX(150px) translateY(-50px);
+  -webkit-transform: translateX(120px) translateY(-50px);
+          transform: translateX(120px) translateY(-50px);
+}
+
+@media (max-width: 768px) {
+  .result_section .planetSection .planerWelcome .planet .planetSize {
+    width: 280px;
+    height: 280px;
+    -webkit-transform: translateX(0px) translateY(0px);
+            transform: translateX(0px) translateY(0px);
+  }
+}
+
+.result_section .plantOpDesc {
+  width: 50%;
 }
 
 .result_section .plantOpDesc .planetOpt {
-  width: 285.5px;
+  width: 55%;
   height: 34px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -666,12 +680,13 @@
   font-size: 16px;
   letter-spacing: 2.35px;
   font-family: "Barlow Condensed", sans-serif;
-  -webkit-transform: translateX(0px) translateY(-180px);
-          transform: translateX(0px) translateY(-180px);
+  -webkit-transform: translateX(-90px) translateY(-450%);
+          transform: translateX(-90px) translateY(-450%);
 }
 
 .result_section .plantOpDesc .planetOpt .planet {
   position: relative;
+  margin-right: 20px;
 }
 
 .result_section .plantOpDesc .planetOpt .planet:hover {
@@ -728,32 +743,35 @@
 }
 
 .result_section .currentPlanetName {
+  width: 100%;
   font-size: 100px;
   font-family: "Bellefair", serif;
   color: #ffffff;
-  -webkit-transform: translateX(0px) translateY(-130px);
-          transform: translateX(0px) translateY(-130px);
+  -webkit-transform: translateX(-90px) translateY(-130px);
+          transform: translateX(-90px) translateY(-130px);
 }
 
 .result_section .currentPlanetDesc {
   text-align: justify;
   color: white;
-  width: 50%;
-  -webkit-transform: translateX(0px) translateY(-100px);
-          transform: translateX(0px) translateY(-100px);
+  width: 80%;
+  -webkit-transform: translateX(-90px) translateY(-100px);
+          transform: translateX(-90px) translateY(-100px);
 }
 
 .result_section .border_line {
   width: 60%;
   height: 2px;
   background-color: #383b4b;
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
+  -webkit-transform: translateX(-90px) translateY(-20px);
+          transform: translateX(-90px) translateY(-20px);
 }
 
 .result_section .planetInfo {
   width: 60%;
   height: auto;
+  -webkit-transform: translateX(-90px);
+          transform: translateX(-90px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -772,6 +790,7 @@
 .result_section .planetInfo .planetDst,
 .result_section .planetInfo .planetTime {
   height: 50px;
+  margin-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -803,5 +822,6 @@
   font-size: 28px;
   font-family: "Bellefair", serif;
   color: #ffffff;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
