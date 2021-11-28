@@ -70,9 +70,15 @@ function updateInfo(data){
         // updateSection.innerHTML="";
     }
 }
-updateInfo('1');
+updateInfo('2');
 function destinationUpdate(){
-    updateSection.innerHTML=`
+    planetUpdate('0');
+}
+function planetUpdate(planetNo){
+    fetch('data.json').
+then((res)=>res.json()).
+then((data)=>{
+updateSection.innerHTML=`
     <div class="planetSection">
             <div class="planerWelcome">
                 <div class="welcomeText">
@@ -80,54 +86,52 @@ function destinationUpdate(){
                     <div class="text">PICK YOUR DESTINATION</div>
                 </div>
                 <div class="planet">
-                    <img src="assets/destination/image-moon.webp" class="planetSize" alt="Moon"/>
+                    <img src="${data.destinations[planetNo].images.webp}" class="planetSize" alt="${data.destinations[planetNo].name}"/>
                 </div>
             </div>
         </div>
         <div class="plantOpDesc">
             <div class="planetOpt">
-                <div class="planet one active">
-                    <div class="planetName">MOON</div>
+                <div class="planet one ${planetNo==='0' ? 'active':''}">
+                    <div class="planetName" data-id="0">MOON</div>
                     <div class="underline"></div>
                 </div>
-                <div class="planet two">
-                    <div class="planetName">MARS</div>
+                <div class="planet two ${planetNo==='1' ? 'active':''}">
+                    <div class="planetName" data-id="1">MARS</div>
                     <div class="underline"></div>
                 </div>
-                <div class="planet three">
-                    <div class="planetName">EUROPA</div>
+                <div class="planet three ${planetNo==='2' ? 'active':''}">
+                    <div class="planetName" data-id="2">EUROPA</div>
                     <div class="underline"></div>
                 </div>
-                <div class="planet four">
-                    <div class="planetName">TITAN</div>
+                <div class="planet four ${planetNo==='3' ? 'active':''}">
+                    <div class="planetName" data-id="3">TITAN</div>
                     <div class="underline"></div>
                 </div>
             </div>
-            <div class="currentPlanetName">MOON</div>
+            <div class="currentPlanetName">${data.destinations[planetNo].name}</div>
             <div class="currentPlanetDesc">
-                See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back
-                refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+                ${data.destinations[planetNo].description}
             </div>
             <div class="border_line"></div>
             <div class="planetInfo">
                 <div class="planetDst">
                     <div class="dstDes">AVG. DISTANCE</div>
-                    <div class="dstNum">384,000 KM</div>
+                    <div class="dstNum">${data.destinations[planetNo].distance}</div>
                 </div>
                 <div class="planetTime">
                     <div class="timeDesc">EST. TRAVEL TIME</div>
-                    <div class="timeNum"> 3 DAYS</div>
+                    <div class="timeNum">${data.destinations[planetNo].travel}</div>
                 </div>
             </div>
         </div>
     `;
-    let planetMenu=document.querySelectorAll('.planetOpt .planet');
-    planetMenu.forEach((e)=>{
+    let planets=document.querySelectorAll('.planetName');
+    planets.forEach((e)=>{
         e.addEventListener('click',(e2)=>{
-            planetMenu.forEach((e)=>{
-                e.classList.remove('active');
-            });
-            e2.target.parentNode.classList.add('active');
+            let number=e2.target.dataset.id;
+            planetUpdate(number);
         });
     });
+});
 }
