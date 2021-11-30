@@ -79,7 +79,8 @@ function planetUpdate(planetNo){
 then((res)=>res.json()).
 then((data)=>{
 updateSection.innerHTML=`
-    <div class="planetSection">
+    <div class="planetContaining">    
+        <div class="planetSection">
             <div class="planerWelcome">
                 <div class="welcomeText">
                     <div class="num">01</div>
@@ -125,6 +126,7 @@ updateSection.innerHTML=`
                 </div>
             </div>
         </div>
+    </div>
     `;
     let planets=document.querySelectorAll('.planetName');
     planets.forEach((e)=>{
