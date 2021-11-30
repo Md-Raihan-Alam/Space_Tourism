@@ -8,23 +8,21 @@
 }
 
 .homeImage {
-  height: 100vh;
+  height: 100%;
   background-image: url("assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 @media (max-width: 768px) {
   .homeImage {
     background-image: url("assets/home/background-home-tablet.jpg");
-    height: 700px;
   }
 }
 
 @media (max-width: 375px) {
   .homeImage {
     background-image: url("assets/home/background-home-mobile.jpg");
-    height: 900px;
   }
 }
 
@@ -32,20 +30,18 @@
   height: 100vh;
   background-image: url("assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 @media (max-width: 768px) {
   .destinationImage {
     background-image: url("assets/destination/background-destination-tablet.jpg");
-    height: 700px;
   }
 }
 
 @media (max-width: 375px) {
   .destinationImage {
     background-image: url("assets/destination/background-destination-mobile.jpg");
-    height: 900px;
   }
 }
 

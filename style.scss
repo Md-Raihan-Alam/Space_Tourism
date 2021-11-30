@@ -24,31 +24,27 @@ $mobile-size: 375px;
   box-sizing: border-box;
 }
 .homeImage {
-  height: 100vh;
+  height: 100%;
   background-image: url("assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   @include tabContent {
     background-image: url("assets/home/background-home-tablet.jpg");
-    height: 700px;
   }
   @include mobileContent {
     background-image: url("assets/home/background-home-mobile.jpg");
-    height: 900px;
   }
 }
 .destinationImage {
   height: 100vh;
   background-image: url("assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   @include tabContent {
     background-image: url("assets/destination/background-destination-tablet.jpg");
-    height: 700px;
   }
   @include mobileContent {
     background-image: url("assets/destination/background-destination-mobile.jpg");
-    height: 900px;
   }
 }
 .container {
