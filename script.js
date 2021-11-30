@@ -70,7 +70,7 @@ function updateInfo(data){
         // updateSection.innerHTML="";
     }
 }
-updateInfo('2');
+updateInfo('1');
 function destinationUpdate(){
     planetUpdate('0');
 }
