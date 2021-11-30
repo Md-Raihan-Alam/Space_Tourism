@@ -17,19 +17,19 @@
 @media (max-width: 768px) {
   .homeImage {
     background-image: url("assets/home/background-home-tablet.jpg");
-    height: 130vh;
+    height: 700px;
   }
 }
 
 @media (max-width: 375px) {
   .homeImage {
     background-image: url("assets/home/background-home-mobile.jpg");
-    height: 140vh;
+    height: 900px;
   }
 }
 
 .destinationImage {
-  height: 150vh;
+  height: 100vh;
   background-image: url("assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -38,14 +38,14 @@
 @media (max-width: 768px) {
   .destinationImage {
     background-image: url("assets/destination/background-destination-tablet.jpg");
-    height: 130vh;
+    height: 700px;
   }
 }
 
 @media (max-width: 375px) {
   .destinationImage {
     background-image: url("assets/destination/background-destination-mobile.jpg");
-    height: 140vh;
+    height: 900px;
   }
 }
 

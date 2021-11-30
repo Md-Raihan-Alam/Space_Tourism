@@ -30,25 +30,25 @@ $mobile-size: 375px;
   background-size: 100% 100%;
   @include tabContent {
     background-image: url("assets/home/background-home-tablet.jpg");
-    height: 130vh;
+    height: 700px;
   }
   @include mobileContent {
     background-image: url("assets/home/background-home-mobile.jpg");
-    height: 140vh;
+    height: 900px;
   }
 }
 .destinationImage {
-  height: 150vh;
+  height: 100vh;
   background-image: url("assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   @include tabContent {
     background-image: url("assets/destination/background-destination-tablet.jpg");
-    height: 130vh;
+    height: 700px;
   }
   @include mobileContent {
     background-image: url("assets/destination/background-destination-mobile.jpg");
-    height: 140vh;
+    height: 900px;
   }
 }
 .container {
