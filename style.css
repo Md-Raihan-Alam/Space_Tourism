@@ -604,6 +604,8 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
+    top: -130px;
   }
 }
 
@@ -637,9 +639,9 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -689,6 +691,21 @@
 @media (max-width: 768px) {
   .result_section .planetContaining .planetSection .planerWelcome .welcomeText {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    left: 10px;
+    top: -90px;
   }
 }
 
@@ -717,7 +734,7 @@
 
 @media (max-width: 768px) {
   .result_section .planetContaining .planetSection .planerWelcome .planet {
-    width: 220%;
+    width: 50%;
     height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -759,8 +776,8 @@
   .result_section .planetContaining .planetSection .planerWelcome .planet .planetSize {
     width: 200px;
     height: 200px;
-    -webkit-transform: translateX(0px) translateY(-240px);
-            transform: translateX(0px) translateY(-240px);
+    -webkit-transform: translateX(100px) translateY(-80px);
+            transform: translateX(100px) translateY(-80px);
   }
 }
 
@@ -771,6 +788,20 @@
 @media (max-width: 768px) {
   .result_section .planetContaining .plantOpDesc {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 0px;
   }
 }
 
@@ -801,8 +832,22 @@
 
 @media (max-width: 768px) {
   .result_section .planetContaining .plantOpDesc .planetOpt {
-    -webkit-transform: translateX(-90px) translateY(40px);
-            transform: translateX(-90px) translateY(40px);
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    left: 0;
+    top: 50px;
   }
 }
 
@@ -877,9 +922,23 @@
 
 @media (max-width: 768px) {
   .result_section .planetContaining .currentPlanetName {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 80px;
-    -webkit-transform: translateX(-105px) translateY(50px);
-            transform: translateX(-105px) translateY(50px);
+    left: 0;
+    top: 70px;
   }
 }
 
@@ -894,11 +953,9 @@
 
 @media (max-width: 768px) {
   .result_section .planetContaining .currentPlanetDesc {
-    width: 160%;
+    left: 0;
     text-align: center;
-    -webkit-transform: translateX(-46%) translateY(60%);
-            transform: translateX(-46%) translateY(60%);
-    margin-bottom: 20px;
+    top: 80px;
   }
 }
 
@@ -913,9 +970,11 @@
 
 @media (max-width: 768px) {
   .result_section .planetContaining .border_line {
-    width: 140%;
-    -webkit-transform: translateX(-45%) translateY(40px);
-            transform: translateX(-45%) translateY(40px);
+    width: 80%;
+    left: 10%;
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: -70px;
   }
 }
 
@@ -924,6 +983,8 @@
   height: auto;
   position: relative;
   left: -10%;
+  -webkit-transform: translateX(20%) translateY(20%);
+          transform: translateX(20%) translateY(20%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -941,9 +1002,9 @@
 
 @media (max-width: 768px) {
   .result_section .planetContaining .planetInfo {
-    width: 60%;
-    -webkit-transform: translateX(-150px) translateY(60px);
-            transform: translateX(-150px) translateY(60px);
+    width: 80%;
+    left: 0;
+    top: 100px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -957,12 +1018,13 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 
 .result_section .planetContaining .planetInfo .planetDst,
 .result_section .planetContaining .planetInfo .planetTime {
-  height: 50px;
   margin-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -977,6 +1039,14 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .result_section .planetContaining .planetInfo .planetDst,
+  .result_section .planetContaining .planetInfo .planetTime {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
 }
 
 .result_section .planetContaining .planetInfo .planetDst .dstDes,
@@ -997,6 +1067,15 @@
   font-family: "Bellefair", serif;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .result_section .planetContaining .planetInfo .planetDst .dstNum,
+  .result_section .planetContaining .planetInfo .planetDst .timeNum,
+  .result_section .planetContaining .planetInfo .planetTime .dstNum,
+  .result_section .planetContaining .planetInfo .planetTime .timeNum {
+    font-size: 20px;
+  }
 }
 
 .result_section .planetContaining .planetInfo .planetDst,

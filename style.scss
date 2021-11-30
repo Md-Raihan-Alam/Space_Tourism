@@ -325,21 +325,23 @@ $mobile-size: 375px;
     @include flexDesign(row, center, flex-start);
     @include tabContent {
       @include flexDesign(column, center, center);
+      position: relative;
+      top: -130px;
     }
     .planetSection {
       width: 90%;
       height: auto;
       @include flexDesign(row, flex-start, flex-start);
       @include tabContent {
-        @include flexDesign(column, center, flex-start);
+        @include flexDesign(column, center, center);
       }
       .planerWelcome {
         width: 50%;
         height: 100%;
+        @include flexDesign(column, space-between, flex-start);
         @include tabContent {
           width: 100%;
         }
-        @include flexDesign(column, space-between, flex-start);
         .welcomeText {
           @include flexDesign(row, space-between, flex-start);
           position: relative;
@@ -347,6 +349,9 @@ $mobile-size: 375px;
           left: 100px;
           @include tabContent {
             width: 100%;
+            @include flexDesign(row, flex-start, flex-start);
+            left: 10px;
+            top: -90px;
           }
           .num {
             margin-right: 20px;
@@ -367,7 +372,7 @@ $mobile-size: 375px;
         }
         .planet {
           @include tabContent {
-            width: 220%;
+            width: 50%;
             height: auto;
             @include flexDesign(row, center, center);
           }
@@ -379,7 +384,7 @@ $mobile-size: 375px;
             @include tabContent {
               width: 200px;
               height: 200px;
-              transform: translateX(0px) translateY(-240px);
+              transform: translateX(100px) translateY(-80px);
             }
           }
         }
@@ -389,6 +394,8 @@ $mobile-size: 375px;
       width: 50%;
       @include tabContent {
         width: 100%;
+        @include flexDesign(column, center, center);
+        height: 0px;
       }
       .planetOpt {
         width: 55%;
@@ -402,7 +409,10 @@ $mobile-size: 375px;
         top: -90px;
         left: -10%;
         @include tabContent {
-          transform: translateX(-90px) translateY(40px);
+          width: 80%;
+          @include flexDesign(row, space-between, center);
+          left: 0;
+          top: 50px;
         }
         .planet {
           position: relative;
@@ -476,8 +486,11 @@ $mobile-size: 375px;
       top: -70px;
       left: -10%;
       @include tabContent {
+        width: 100%;
+        @include flexDesign(row, center, center);
         font-size: 80px;
-        transform: translateX(-105px) translateY(50px);
+        left: 0;
+        top: 70px;
       }
     }
     .currentPlanetDesc {
@@ -488,10 +501,9 @@ $mobile-size: 375px;
       top: -60px;
       left: -10%;
       @include tabContent {
-        width: 160%;
+        left: 0;
         text-align: center;
-        transform: translateX(-46%) translateY(60%);
-        margin-bottom: 20px;
+        top: 80px;
       }
     }
     .border_line {
@@ -502,8 +514,11 @@ $mobile-size: 375px;
       left: -10%;
       margin-bottom: 20px;
       @include tabContent {
-        width: 140%;
-        transform: translateX(-45%) translateY(40px);
+        width: 80%;
+        left: 10%;
+        margin-bottom: 0px;
+        position: absolute;
+        bottom: -70px;
       }
     }
     .planetInfo {
@@ -511,17 +526,22 @@ $mobile-size: 375px;
       height: auto;
       position: relative;
       left: -10%;
+      transform: translateX(20%) translateY(20%);
       @include flexDesign(row, space-between, flex-start);
       @include tabContent {
-        width: 60%;
-        transform: translateX(-150px) translateY(60px);
+        width: 80%;
+        left: 0;
+        top: 100px;
         @include flexDesign(row, space-between, center);
+        transform: translateX(0%);
       }
       .planetDst,
       .planetTime {
-        height: 50px;
         margin-right: 20px;
         @include flexDesign(column, space-between, flex-start);
+        @include tabContent {
+          transform: translateX(15%);
+        }
         .dstDes,
         .timeDesc {
           font-size: 14px;
@@ -535,6 +555,9 @@ $mobile-size: 375px;
           font-family: "Bellefair", serif;
           color: #ffffff;
           text-transform: uppercase;
+          @include tabContent {
+            font-size: 20px;
+          }
         }
       }
       .planetDst,
