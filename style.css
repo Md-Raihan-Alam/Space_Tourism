@@ -27,7 +27,7 @@
 }
 
 .destinationImage {
-  height: 100vh;
+  height: 150vh;
   background-image: url("assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -268,6 +268,7 @@
   width: 254px;
   height: 100%;
   position: absolute;
+  z-index: 11111;
   backdrop-filter: blur(7px) saturate(200%);
   -webkit-backdrop-filter: blur(7px) saturate(200%);
   background-color: rgba(255, 255, 255, 0.12);
@@ -709,6 +710,12 @@
   }
 }
 
+@media (max-width: 375px) {
+  .result_section .planetContaining .planetSection .planerWelcome .welcomeText {
+    top: -150px;
+  }
+}
+
 .result_section .planetContaining .planetSection .planerWelcome .welcomeText .num {
   margin-right: 20px;
   color: #ffffff3d;
@@ -781,6 +788,15 @@
   }
 }
 
+@media (max-width: 375px) {
+  .result_section .planetContaining .planetSection .planerWelcome .planet .planetSize {
+    width: 170px;
+    height: 170px;
+    -webkit-transform: translateX(80px) translateY(-100px);
+            transform: translateX(80px) translateY(-100px);
+  }
+}
+
 .result_section .planetContaining .plantOpDesc {
   width: 50%;
 }
@@ -848,6 +864,12 @@
             align-items: center;
     left: 0;
     top: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  .result_section .planetContaining .plantOpDesc .planetOpt {
+    top: 90px;
   }
 }
 
@@ -942,6 +964,12 @@
   }
 }
 
+@media (max-width: 375px) {
+  .result_section .planetContaining .currentPlanetName {
+    top: 100px;
+  }
+}
+
 .result_section .planetContaining .currentPlanetDesc {
   text-align: justify;
   color: white;
@@ -956,6 +984,12 @@
     left: 0;
     text-align: center;
     top: 80px;
+  }
+}
+
+@media (max-width: 375px) {
+  .result_section .planetContaining .currentPlanetDesc {
+    top: 110px;
   }
 }
 
@@ -974,7 +1008,13 @@
     left: 10%;
     margin-bottom: 0px;
     position: absolute;
-    bottom: -70px;
+    bottom: -20%;
+  }
+}
+
+@media (max-width: 375px) {
+  .result_section .planetContaining .border_line {
+    bottom: -30%;
   }
 }
 
@@ -1004,7 +1044,7 @@
   .result_section .planetContaining .planetInfo {
     width: 80%;
     left: 0;
-    top: 100px;
+    top: 120px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1020,6 +1060,25 @@
             align-items: center;
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+  }
+}
+
+@media (max-width: 375px) {
+  .result_section .planetContaining .planetInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: 170px;
   }
 }
 
@@ -1078,8 +1137,35 @@
   }
 }
 
+@media (max-width: 375px) {
+  .result_section .planetContaining .planetInfo .planetDst,
+  .result_section .planetContaining .planetInfo .planetTime {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .result_section .planetContaining .planetInfo .planetDst,
 .result_section .planetContaining .planetInfo .planetTime {
   width: 270px;
+}
+
+@media (max-width: 375px) {
+  .result_section .planetContaining .planetInfo .planetDst,
+  .result_section .planetContaining .planetInfo .planetTime {
+    position: relative;
+    left: -10%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

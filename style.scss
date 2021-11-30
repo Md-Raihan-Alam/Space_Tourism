@@ -36,7 +36,7 @@ $mobile-size: 375px;
   }
 }
 .destinationImage {
-  height: 100vh;
+  height: 150vh;
   background-image: url("assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -181,6 +181,7 @@ $mobile-size: 375px;
   width: 254px;
   height: 100%;
   position: absolute;
+  z-index: 11111;
   backdrop-filter: blur(7px) saturate(200%);
   -webkit-backdrop-filter: blur(7px) saturate(200%);
   background-color: rgba(255, 255, 255, 0.12);
@@ -353,6 +354,9 @@ $mobile-size: 375px;
             left: 10px;
             top: -90px;
           }
+          @include mobileContent {
+            top: -150px;
+          }
           .num {
             margin-right: 20px;
             color: #ffffff3d;
@@ -386,6 +390,11 @@ $mobile-size: 375px;
               height: 200px;
               transform: translateX(100px) translateY(-80px);
             }
+            @include mobileContent {
+              width: 170px;
+              height: 170px;
+              transform: translateX(80px) translateY(-100px);
+            }
           }
         }
       }
@@ -413,6 +422,9 @@ $mobile-size: 375px;
           @include flexDesign(row, space-between, center);
           left: 0;
           top: 50px;
+        }
+        @include mobileContent {
+          top: 90px;
         }
         .planet {
           position: relative;
@@ -492,6 +504,9 @@ $mobile-size: 375px;
         left: 0;
         top: 70px;
       }
+      @include mobileContent {
+        top: 100px;
+      }
     }
     .currentPlanetDesc {
       text-align: justify;
@@ -504,6 +519,9 @@ $mobile-size: 375px;
         left: 0;
         text-align: center;
         top: 80px;
+      }
+      @include mobileContent {
+        top: 110px;
       }
     }
     .border_line {
@@ -518,7 +536,10 @@ $mobile-size: 375px;
         left: 10%;
         margin-bottom: 0px;
         position: absolute;
-        bottom: -70px;
+        bottom: -20%;
+      }
+      @include mobileContent {
+        bottom: -30%;
       }
     }
     .planetInfo {
@@ -531,9 +552,13 @@ $mobile-size: 375px;
       @include tabContent {
         width: 80%;
         left: 0;
-        top: 100px;
+        top: 120px;
         @include flexDesign(row, space-between, center);
         transform: translateX(0%);
+      }
+      @include mobileContent {
+        @include flexDesign(column, center, center);
+        top: 170px;
       }
       .planetDst,
       .planetTime {
@@ -559,10 +584,17 @@ $mobile-size: 375px;
             font-size: 20px;
           }
         }
+        @include mobileContent {
+          @include flexDesign(column, center, center);
+        }
       }
       .planetDst,
       .planetTime {
         width: 270px;
+        @include mobileContent {
+          position: relative;
+          left: -10%;
+        }
       }
     }
   }
