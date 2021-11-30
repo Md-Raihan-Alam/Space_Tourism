@@ -17,12 +17,14 @@
 @media (max-width: 768px) {
   .homeImage {
     background-image: url("assets/home/background-home-tablet.jpg");
+    height: 130vh;
   }
 }
 
 @media (max-width: 375px) {
   .homeImage {
     background-image: url("assets/home/background-home-mobile.jpg");
+    height: 140vh;
   }
 }
 
@@ -36,12 +38,14 @@
 @media (max-width: 768px) {
   .destinationImage {
     background-image: url("assets/destination/background-destination-tablet.jpg");
+    height: 130vh;
   }
 }
 
 @media (max-width: 375px) {
   .destinationImage {
     background-image: url("assets/destination/background-destination-mobile.jpg");
+    height: 140vh;
   }
 }
 
