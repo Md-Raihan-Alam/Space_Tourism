@@ -1,4 +1,5 @@
 const updateSection=document.querySelector('.result_section');
+const updateSectionTwo=document.querySelector('.crew_section');
 const underlineClassAll=document.querySelectorAll('.option');
 const mediaBorderLineMenu=document.querySelectorAll('.media_menu .menu .option');
 let updateUnderline=document.querySelectorAll('.underline');
@@ -64,12 +65,13 @@ function updateInfo(data){
         document.querySelector('html').className="";
         document.querySelector('html').className="destinationImage"
         destinationUpdate();
-    }else{
+    }else if(data==="3"){
         document.querySelector('html').className="";
-        // updateSection.innerHTML="";
+        document.querySelector('html').className="crewImage";
+        crewUpdate();
     }
 }
-updateInfo('1');
+updateInfo('3');
 function destinationUpdate(){
     planetUpdate('0');
 }
@@ -135,4 +137,8 @@ updateSection.innerHTML=`
         });
     });
 });
+}
+function crewUpdate(){
+    updateSection.innerHTML=``;
+    
 }
