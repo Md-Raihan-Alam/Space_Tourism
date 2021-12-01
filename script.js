@@ -38,10 +38,9 @@ mediaBorderLineMenu.forEach((e)=>{
     });
 });
 function updateInfo(data){
-    console.log(data);
     if(data==='1'){
-        document.body.className="";
-        document.body.className="homeImage";
+        document.querySelector('html').className="";
+        document.querySelector('html').className="homeImage";
         updateSection.innerHTML=`
         <div class="result_container">
             <div class="text">
@@ -62,11 +61,11 @@ function updateInfo(data){
             </div>
         </div>`;
     }else if(data==="2"){
-        document.body.className="";
-        document.body.className="destinationImage"
+        document.querySelector('html').className="";
+        document.querySelector('html').className="destinationImage"
         destinationUpdate();
     }else{
-        document.body.className="";
+        document.querySelector('html').className="";
         // updateSection.innerHTML="";
     }
 }
