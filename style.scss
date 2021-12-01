@@ -24,9 +24,11 @@ $mobile-size: 375px;
   box-sizing: border-box;
 }
 .homeImage {
-  height: 100%;
-  background-image: url("assets/home/background-home-desktop.jpg");
-  background-repeat: no-repeat;
+  background: url("assets/home/background-home-desktop.jpg") no-repeat 100%
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   @include tabContent {
     background-image: url("assets/home/background-home-tablet.jpg");
@@ -36,9 +38,11 @@ $mobile-size: 375px;
   }
 }
 .destinationImage {
-  height: 100vh;
-  background-image: url("assets/destination/background-destination-desktop.jpg");
-  background-repeat: no-repeat;
+  background-image: url("assets/destination/background-destination-desktop.jpg")
+    no-repeat 100% center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   @include tabContent {
     background-image: url("assets/destination/background-destination-tablet.jpg");
@@ -299,6 +303,7 @@ $mobile-size: 375px;
         font-family: "Bellefair", serif;
         width: 274px;
         height: 274px;
+        margin-bottom: 80px;
         @include tabContent {
           width: 242px;
           height: 242px;
@@ -590,7 +595,8 @@ $mobile-size: 375px;
       }
       .planetDst,
       .planetTime {
-        width: 270px;
+        width: 280px;
+        margin-bottom: 20px;
         @include mobileContent {
           position: relative;
           left: -10%;

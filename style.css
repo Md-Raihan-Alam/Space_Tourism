@@ -8,9 +8,7 @@
 }
 
 .homeImage {
-  height: 100%;
-  background-image: url("assets/home/background-home-desktop.jpg");
-  background-repeat: no-repeat;
+  background: url("assets/home/background-home-desktop.jpg") no-repeat 100% center fixed;
   background-size: cover;
 }
 
@@ -27,9 +25,7 @@
 }
 
 .destinationImage {
-  height: 100vh;
-  background-image: url("assets/destination/background-destination-desktop.jpg");
-  background-repeat: no-repeat;
+  background-image: url("assets/destination/background-destination-desktop.jpg") no-repeat 100% center fixed;
   background-size: cover;
 }
 
@@ -528,6 +524,7 @@
   font-family: "Bellefair", serif;
   width: 274px;
   height: 274px;
+  margin-bottom: 80px;
   background-color: #ffffff;
   border-radius: 50%;
   color: #0b0d17;
@@ -1158,7 +1155,8 @@
 
 .result_section .planetContaining .planetInfo .planetDst,
 .result_section .planetContaining .planetInfo .planetTime {
-  width: 270px;
+  width: 280px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 375px) {
