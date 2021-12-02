@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Rubik:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&family=Rubik:wght@300&display=swap");
 $tab-size: 768px;
-$mobile-size: 375px;
+$mobile-size: 380px;
 @mixin flexDesign($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
@@ -623,6 +623,7 @@ body {
   }
 }
 .crew_section {
+  visibility: hidden;
   @include flexDesign(row, space-around, flex-end);
   @include tabContent {
     @include flexDesign(column, center, center);
@@ -813,12 +814,15 @@ body {
         top: 140px;
       }
       @include mobileContent {
-        width: 310px;
+        width: 50%;
         height: 323px;
         border-bottom: 3px solid #383b4b;
         top: -250px;
-        left: 10%;
+        left: 30%;
       }
     }
   }
+}
+.showCrew {
+  visibility: visible;
 }
