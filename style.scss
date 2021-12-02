@@ -627,9 +627,6 @@ body {
   @include tabContent {
     @include flexDesign(column, center, center);
   }
-  @include mobileContent {
-    @include flexDesign(column-reverse, center, center);
-  }
   .crew_text_section {
     width: 50%;
     @include tabContent {
@@ -646,12 +643,16 @@ body {
         left: 5%;
         width: 220px;
       }
-      // @include mobileContent {
-      //   width: 200%;
-      //   @include flexDesign(row, center, center);
-      // }
+      @include mobileContent {
+        width: 100%;
+        left: 0;
+        @include flexDesign(row, center, center);
+      }
       .num {
         color: #ffffff3d;
+        @include mobileContent {
+          margin-right: 10px;
+        }
       }
       .text {
         color: #ffffff;
@@ -665,10 +666,9 @@ body {
         @include tabContent {
           font-size: 20px;
         }
-        // @include mobileContent {
-        //   font-size: 16px;
-        //   margin-right: 10px;
-        // }
+        @include mobileContent {
+          font-size: 16px;
+        }
       }
     }
     .crew_info {
@@ -677,6 +677,11 @@ body {
         width: 80%;
         position: relative;
         top: -30px;
+      }
+      @include mobileContent {
+        width: 100%;
+        @include flexDesign(column, center, center);
+        top: 350px;
       }
       .crew_position {
         font-family: "Bellefair", serif;
@@ -692,6 +697,12 @@ body {
           font-size: 24px;
           @include flexDesign(row, center, center);
         }
+        @include mobileContent {
+          width: 100%;
+          left: 0;
+          font-size: 16px;
+          @include flexDesign(row, center, center);
+        }
       }
       .crew_member_name {
         color: #ffffff;
@@ -699,12 +710,20 @@ body {
         text-transform: uppercase;
         font-size: 56px;
         position: absolute;
+        width: 100%;
         top: -120px;
         left: 20%;
         @include tabContent {
           width: 125%;
+          text-align: center;
           left: 0;
           font-size: 40px;
+          @include flexDesign(row, center, center);
+        }
+        @include mobileContent {
+          width: 100%;
+          left: 0;
+          font-size: 24px;
           @include flexDesign(row, center, center);
         }
       }
@@ -723,12 +742,25 @@ body {
           width: 125%;
           left: 0;
           top: -40px;
-          margin-top: 0px;
+          margin-top: 10px;
           font-size: 16px;
           @include flexDesign(row, center, center);
           div {
             width: 60%;
             text-align: center;
+          }
+        }
+        @include mobileContent {
+          width: 100%;
+          left: 0;
+          top: -40px;
+          margin-top: 0px;
+          font-size: 16px;
+          @include flexDesign(row, center, center);
+          div {
+            width: 80%;
+            text-align: center;
+            margin-bottom: 20px;
           }
         }
       }
@@ -770,9 +802,6 @@ body {
       width: 100%;
       @include flexDesign(row, center, center);
     }
-    // @include mobileContent {
-    //   @include flexDesign(row, center, center);
-    // }
     .crewPhoto {
       position: absolute;
       top: -305px;
@@ -783,12 +812,13 @@ body {
         height: 500px;
         top: 140px;
       }
-      // @include mobileContent {
-      //   width: 300px;
-      //   height: 223px;
-      //   top: -240px;
-      //   left: 20%;
-      // }
+      @include mobileContent {
+        width: 310px;
+        height: 323px;
+        border-bottom: 3px solid #383b4b;
+        top: -250px;
+        left: 10%;
+      }
     }
   }
 }

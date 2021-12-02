@@ -1221,24 +1221,6 @@ body {
   }
 }
 
-@media (max-width: 375px) {
-  .crew_section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
 .crew_section .crew_text_section {
   width: 50%;
   position: relative;
@@ -1277,8 +1259,34 @@ body {
   }
 }
 
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .welcome {
+    width: 100%;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .crew_section .crew_text_section .welcome .num {
   color: #ffffff3d;
+}
+
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .welcome .num {
+    margin-right: 10px;
+  }
 }
 
 .crew_section .crew_text_section .welcome .text {
@@ -1297,6 +1305,13 @@ body {
   .crew_section .crew_text_section .welcome .num,
   .crew_section .crew_text_section .welcome .text {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .welcome .num,
+  .crew_section .crew_text_section .welcome .text {
+    font-size: 16px;
   }
 }
 
@@ -1321,6 +1336,26 @@ body {
     width: 80%;
     position: relative;
     top: -30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .crew_info {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: 350px;
   }
 }
 
@@ -1355,12 +1390,34 @@ body {
   }
 }
 
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .crew_info .crew_position {
+    width: 100%;
+    left: 0;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .crew_section .crew_text_section .crew_info .crew_member_name {
   color: #ffffff;
   font-family: "Bellefair", serif;
   text-transform: uppercase;
   font-size: 56px;
   position: absolute;
+  width: 100%;
   top: -120px;
   left: 20%;
 }
@@ -1368,8 +1425,30 @@ body {
 @media (max-width: 768px) {
   .crew_section .crew_text_section .crew_info .crew_member_name {
     width: 125%;
+    text-align: center;
     left: 0;
     font-size: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .crew_info .crew_member_name {
+    width: 100%;
+    left: 0;
+    font-size: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1404,7 +1483,7 @@ body {
     width: 125%;
     left: 0;
     top: -40px;
-    margin-top: 0px;
+    margin-top: 10px;
     font-size: 16px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1423,6 +1502,34 @@ body {
   .crew_section .crew_text_section .crew_info .commander_info div {
     width: 60%;
     text-align: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .crew_section .crew_text_section .crew_info .commander_info {
+    width: 100%;
+    left: 0;
+    top: -40px;
+    margin-top: 0px;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .crew_section .crew_text_section .crew_info .commander_info div {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
 
@@ -1523,6 +1630,16 @@ body {
     width: 400px;
     height: 500px;
     top: 140px;
+  }
+}
+
+@media (max-width: 375px) {
+  .crew_section .crew_img_section .crewPhoto {
+    width: 310px;
+    height: 323px;
+    border-bottom: 3px solid #383b4b;
+    top: -250px;
+    left: 10%;
   }
 }
 /*# sourceMappingURL=style.css.map */
