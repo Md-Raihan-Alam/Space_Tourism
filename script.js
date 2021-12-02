@@ -1,5 +1,5 @@
 const updateSection=document.querySelector('.result_section');
-const updateSectionTwo=document.querySelector('.crew_section');
+const crewVisibilinty=document.querySelector('.crew_section');
 const underlineClassAll=document.querySelectorAll('.option');
 const mediaBorderLineMenu=document.querySelectorAll('.media_menu .menu .option');
 let updateUnderline=document.querySelectorAll('.underline');
@@ -42,6 +42,7 @@ function updateInfo(data){
     if(data==='1'){
         document.querySelector('html').className="";
         document.querySelector('html').className="homeImage";
+        crewVisibilinty.classList.remove('showCrew');
         updateSection.innerHTML=`
         <div class="result_container">
             <div class="text">
@@ -63,15 +64,29 @@ function updateInfo(data){
         </div>`;
     }else if(data==="2"){
         document.querySelector('html').className="";
-        document.querySelector('html').className="destinationImage"
+        document.querySelector('html').className="destinationImage";
+        crewVisibilinty.classList.remove('showCrew');
         destinationUpdate();
     }else if(data==="3"){
         document.querySelector('html').className="";
         document.querySelector('html').className="crewImage";
+        crewVisibilinty.classList.add('showCrew');
+        let crewMembers=document.querySelectorAll('.crew_ele');
+        crewMembers.forEach((e)=>{
+            e.addEventListener('click',function(e2){
+                let crewMemberSelector=e2.target;
+                let crewMemberId=e2.target.dataset.id;
+                crewMembers.forEach((e3)=>{
+                    e3.classList.remove('active');
+                });
+                crewMemberSelector.classList.add('active');
+                crewUpdate(crewMemberId);
+            });
+        });
         crewUpdate();
     }
 }
-updateInfo('3');
+updateInfo('1');
 function destinationUpdate(){
     planetUpdate('0');
 }
@@ -138,7 +153,21 @@ updateSection.innerHTML=`
     });
 });
 }
-function crewUpdate(){
+function crewUpdate(crewNo){
+    crewNo=crewNo===undefined? 0:crewNo;
+    let crewDataUpdate=document.querySelector('.crew_info');
+    let crewImageUpdate=document.querySelector('.crew_img_section');
     updateSection.innerHTML=``;
-    
+    fetch('data.json').
+    then((res)=>res.json())
+    .then((data)=>{
+        crewDataUpdate.innerHTML=`
+    <div class="crew_position">${data.crew[crewNo].role}</div>
+                <div class="crew_member_name">${data.crew[crewNo].name}</div>
+                <div class="commander_info"><div>${data.crew[crewNo].bio}</div></div>
+    `;
+    crewImageUpdate.innerHTML=`
+    <img src="${data.crew[crewNo].images.webp}" alt="Douglas Hurley" class="crewPhoto"/>
+    `;
+    });
 }
