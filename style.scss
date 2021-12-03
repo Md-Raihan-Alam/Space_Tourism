@@ -65,6 +65,20 @@ $mobile-size: 380px;
     background-image: url("assets/crew/background-crew-mobile.jpg");
   }
 }
+.technologyImage {
+  background: url("assets/technology/background-technology-desktop.jpg")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @include tabContent {
+    background-image: url("assets/technology/background-technology-tablet.jpg");
+  }
+  @include mobileContent {
+    background-image: url("assets/technology/background-technology-mobile.jpg");
+  }
+}
 body {
   height: 0;
 }
@@ -824,5 +838,124 @@ body {
   }
 }
 .showCrew {
+  visibility: visible;
+}
+.technology_section {
+  visibility: hidden;
+  .technology_text {
+    @include flexDesign(column, flex-start, flex-start);
+    position: relative;
+    .welcome {
+      width: 250px;
+      @include flexDesign(row, space-between, flex-start);
+      position: absolute;
+      top: -300px;
+      left: 10%;
+      @include tabContent {
+        left: 12%;
+        width: 220px;
+      }
+      @include mobileContent {
+        width: 100%;
+        left: 0;
+        @include flexDesign(row, center, center);
+      }
+      .num {
+        color: #ffffff3d;
+        @include mobileContent {
+          margin-right: 10px;
+        }
+      }
+      .text {
+        color: #ffffff;
+        text-transform: uppercase;
+      }
+      .num,
+      .text {
+        font-size: clamp(24px, 1px, 28px);
+        word-spacing: 4.75px;
+        font-family: "Bellefair", serif;
+        @include tabContent {
+          font-size: 20px;
+        }
+        @include mobileContent {
+          font-size: 16px;
+        }
+      }
+    }
+    .technology_info {
+      width: 100%;
+      position: relative;
+      top: -200px;
+      @include flexDesign(row, space-between, center);
+      .selectors_technology {
+        width: 20%;
+        @include flexDesign(column, space-between, center);
+        .vehicle {
+          margin-bottom: 20px;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          border: 3px solid #ffffff49;
+          @include flexDesign(row, center, center);
+          margin-left: 15%;
+          font-family: "Bellefair", serif;
+          font-size: 32px;
+          color: #ffffff;
+          cursor: pointer;
+          &:hover {
+            border: 3px solid #ffffff;
+          }
+        }
+        .active {
+          background-color: #ffffff;
+          color: #0b0d17;
+        }
+      }
+      .technology_desc {
+        width: 40%;
+        position: relative;
+        top: -140px;
+        @include flexDesign(column, space-between, flex-start);
+        .desc_sub_header {
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 16px;
+          color: #d0d6f9;
+          text-transform: uppercase;
+        }
+        .desc_header {
+          font-family: "Bellefair", serif;
+          font-size: 56px;
+          text-transform: uppercase;
+          text-align: center;
+          color: #ffffff;
+          position: absolute;
+          top: 40px;
+        }
+        .vehicle_info {
+          @include flexDesign(row, flex-start, flex-start);
+          font-family: "Barlow Condensed", sans-serif;
+          color: #ffffff;
+          text-align: justify;
+          position: absolute;
+          top: 130px;
+          div {
+            width: 65%;
+          }
+        }
+      }
+      .technology_image {
+        width: 40%;
+        @include flexDesign(row, flex-end, flex-end);
+        .tech_img {
+          width: 100%;
+          height: 70%;
+          transform: translateX(-2px);
+        }
+      }
+    }
+  }
+}
+.showTechnology {
   visibility: visible;
 }
