@@ -1,5 +1,6 @@
 const updateSection=document.querySelector('.result_section');
 const crewVisibilinty=document.querySelector('.crew_section');
+const techVisibility=document.querySelector('.technology_section');
 const underlineClassAll=document.querySelectorAll('.option');
 const mediaBorderLineMenu=document.querySelectorAll('.media_menu .menu .option');
 let updateUnderline=document.querySelectorAll('.underline');
@@ -43,6 +44,7 @@ function updateInfo(data){
         document.querySelector('html').className="";
         document.querySelector('html').className="homeImage";
         crewVisibilinty.classList.remove('showCrew');
+        techVisibility.classList.remove('showTechnology');
         updateSection.innerHTML=`
         <div class="result_container">
             <div class="text">
@@ -66,11 +68,13 @@ function updateInfo(data){
         document.querySelector('html').className="";
         document.querySelector('html').className="destinationImage";
         crewVisibilinty.classList.remove('showCrew');
+        techVisibility.classList.remove('showTechnology');
         destinationUpdate();
     }else if(data==="3"){
         document.querySelector('html').className="";
         document.querySelector('html').className="crewImage";
         crewVisibilinty.classList.add('showCrew');
+        techVisibility.classList.remove('showTechnology');
         let crewMembers=document.querySelectorAll('.crew_ele');
         crewMembers.forEach((e)=>{
             e.addEventListener('click',function(e2){
@@ -84,6 +88,24 @@ function updateInfo(data){
             });
         });
         crewUpdate();
+    }else if(data==="4"){
+        document.querySelector('html').className="";
+        document.querySelector('html').className="technologyImage";
+        crewVisibilinty.classList.remove('showCrew');
+        techVisibility.classList.add('showTechnology');
+        let techOptions=document.querySelectorAll('.vehicle');
+        techOptions.forEach((e)=>{
+            e.addEventListener('click',function(e2){
+                let target=e2.target;
+                let techData=e2.target.dataset.id;
+                techOptions.forEach((e)=>{
+                    e.classList.remove('active');
+                });
+                target.classList.add('active');
+                technologyUpdate(techData);
+            });
+        });
+        technologyUpdate();
     }
 }
 updateInfo('1');
@@ -169,5 +191,23 @@ function crewUpdate(crewNo){
     crewImageUpdate.innerHTML=`
     <img src="${data.crew[crewNo].images.webp}" alt="Douglas Hurley" class="crewPhoto"/>
     `;
+    });
+}
+function technologyUpdate(technologyNum){
+    technologyNum=technologyNum===undefined? 0:technologyNum;
+    updateSection.innerHTML=``;
+    let technologyDataUpdate=document.querySelector('.technology_desc');
+    let technologyImage=document.querySelector('.technology_image');
+    fetch('data.json').
+    then((res)=>res.json()).
+    then((data)=>{
+        technologyDataUpdate.innerHTML=`
+         <div class="desc_sub_header">the terminology</div>
+                    <div class="desc_header">${data.technology[technologyNum].name}</div>
+                    <div class="vehicle_info"><div>${data.technology[technologyNum].description}</div></div>
+        `;
+        technologyImage.innerHTML=`
+        <img src="${data.technology[technologyNum].images.portrait}" alt="${data.technology[technologyNum].name}" class="tech_img"/>
+        `;
     });
 }
