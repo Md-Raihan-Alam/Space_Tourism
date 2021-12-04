@@ -933,9 +933,10 @@ body {
         @include flexDesign(column, center, center);
       }
       .selectors_technology {
-        width: 100%;
+        width: 20%;
         @include flexDesign(column, space-between, center);
         @include tabContent {
+          width: 100%;
           @include flexDesign(row, center, center);
           position: relative;
           top: 350px;

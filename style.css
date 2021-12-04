@@ -1830,7 +1830,7 @@ body {
 }
 
 .technology_section .technology_text .technology_info .selectors_technology {
-  width: 100%;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1848,6 +1848,7 @@ body {
 
 @media (max-width: 768px) {
   .technology_section .technology_text .technology_info .selectors_technology {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
