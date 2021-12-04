@@ -1,12 +1,14 @@
+//variables
 const updateSection=document.querySelector('.result_section');
 const crewVisibilinty=document.querySelector('.crew_section');
 const techVisibility=document.querySelector('.technology_section');
 const underlineClassAll=document.querySelectorAll('.option');
 const mediaBorderLineMenu=document.querySelectorAll('.media_menu .menu .option');
-let updateUnderline=document.querySelectorAll('.underline');
+const updateUnderline=document.querySelectorAll('.underline');
 const barMenu=document.querySelector('.bar');
 const crossMenu=document.querySelector('.cross');
 const mediaMenu=document.querySelector('.media_menu');
+
 //dekstop and tab menu
 underlineClassAll.forEach((e)=>{
     e.addEventListener('click',(e2)=>{
@@ -21,6 +23,7 @@ underlineClassAll.forEach((e)=>{
         updateInfo(selectedUpdateResult);
     });
 });
+
 //menu appear and dissapppear
 barMenu.addEventListener('click',function(){
     mediaMenu.style.display="block";
@@ -28,6 +31,7 @@ barMenu.addEventListener('click',function(){
     mediaMenu.style.display="none";
     });
 });
+
 //mobile menu
 mediaBorderLineMenu.forEach((e)=>{
     e.addEventListener('click',(e2)=>{
@@ -39,8 +43,10 @@ mediaBorderLineMenu.forEach((e)=>{
         }
     });
 });
+
+//section update
 function updateInfo(data){
-    if(data==='1'){
+    if(data==='1'){//home section
         document.querySelector('html').className="";
         document.querySelector('html').className="homeImage";
         crewVisibilinty.classList.remove('showCrew');
@@ -64,13 +70,13 @@ function updateInfo(data){
                 <div class="exp_box">EXPLORE</div>
             </div>
         </div>`;
-    }else if(data==="2"){
+    }else if(data==="2"){//destination section
         document.querySelector('html').className="";
         document.querySelector('html').className="destinationImage";
         crewVisibilinty.classList.remove('showCrew');
         techVisibility.classList.remove('showTechnology');
-        destinationUpdate();
-    }else if(data==="3"){
+        planetUpdate('0');
+    }else if(data==="3"){//crew section
         document.querySelector('html').className="";
         document.querySelector('html').className="crewImage";
         crewVisibilinty.classList.add('showCrew');
@@ -88,7 +94,7 @@ function updateInfo(data){
             });
         });
         crewUpdate();
-    }else if(data==="4"){
+    }else if(data==="4"){//technology section
         document.querySelector('html').className="";
         document.querySelector('html').className="technologyImage";
         crewVisibilinty.classList.remove('showCrew');
@@ -109,9 +115,8 @@ function updateInfo(data){
     }
 }
 updateInfo('1');
-function destinationUpdate(){
-    planetUpdate('0');
-}
+
+//destination section
 function planetUpdate(planetNo){
     fetch('data.json').
 then((res)=>res.json()).
@@ -175,6 +180,8 @@ updateSection.innerHTML=`
     });
 });
 }
+
+//crew section
 function crewUpdate(crewNo){
     crewNo=crewNo===undefined? 0:crewNo;
     let crewDataUpdate=document.querySelector('.crew_info');
@@ -193,6 +200,8 @@ function crewUpdate(crewNo){
     `;
     });
 }
+
+//technology section
 function technologyUpdate(technologyNum){
     technologyNum=technologyNum===undefined? 0:technologyNum;
     updateSection.innerHTML=``;

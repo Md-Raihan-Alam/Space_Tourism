@@ -1,7 +1,17 @@
+/*Fonts link*/
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Rubik:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&family=Rubik:wght@300&display=swap");
+/*Fonts link*/
+
+/*Variables*/
+$colorWhite: #ffffff;
+$BarlowStyle: "Barlow Condensed", sans-serif;
+$BelfairStyle: "Bellefair", serif;
 $tab-size: 768px;
 $mobile-size: 380px;
+/*Variables*/
+
+/*mixins and medias*/
 @mixin flexDesign($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
@@ -18,11 +28,15 @@ $mobile-size: 380px;
     @content;
   }
 }
+/*mixins and medias*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/*background images design*/
 .homeImage {
   background: url("assets/home/background-home-desktop.jpg") no-repeat 100%
     center fixed;
@@ -79,9 +93,13 @@ $mobile-size: 380px;
     background-image: url("assets/technology/background-technology-mobile.jpg");
   }
 }
+/*background images design*/
+
 body {
   height: 0;
 }
+
+/*header design=logo line, menu*/
 .container {
   width: 100%;
   .navbar {
@@ -102,7 +120,7 @@ body {
     .menu {
       width: 80%;
       min-width: 456px;
-      font-family: "Barlow Condensed", sans-serif;
+      font-family: $BarlowStyle;
       @include tabContent {
         max-width: 450px;
         min-width: 200px;
@@ -170,7 +188,7 @@ body {
           [class^="underline"] {
             position: absolute;
             top: 54px;
-            background-color: #ffffff;
+            background-color: $colorWhite;
           }
           &:hover {
             .underline {
@@ -194,7 +212,7 @@ body {
           }
           .text,
           .num {
-            color: #ffffff;
+            color: $colorWhite;
             &:hover {
               cursor: pointer;
             }
@@ -212,12 +230,15 @@ body {
     }
   }
 }
+/*header design=logo line, menu*/
+
+/*mobile menu design*/
 .media_menu {
   display: none;
   width: 254px;
   height: 100vh;
   position: fixed;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: $BarlowStyle;
   z-index: 11111;
   backdrop-filter: blur(7px) saturate(200%);
   -webkit-backdrop-filter: blur(7px) saturate(200%);
@@ -244,22 +265,28 @@ body {
       }
       .num,
       .text {
-        color: #ffffff;
+        color: $colorWhite;
         &:hover {
           cursor: pointer;
         }
       }
     }
     .active {
-      border-right: 4px solid #ffffff;
+      border-right: 4px solid $colorWhite;
     }
   }
 }
+/*mobile menu design*/
+
+/*home section and planet section design*/
 .result_section {
   width: 100%;
   height: 400px;
   transform: translateY(230px);
   @include flexDesign(row, center, center);
+
+  /*home section design*/
+
   .result_container {
     width: 80%;
     height: 350px;
@@ -270,7 +297,7 @@ body {
     .text,
     .exp_img {
       width: 50%;
-      color: #ffffff;
+      color: $colorWhite;
       @include tabContent {
         width: 100%;
       }
@@ -287,7 +314,7 @@ body {
         height: 34px;
         font-size: clamp(24px, 1px, 28px);
         word-spacing: 4.75px;
-        font-family: "Bellefair", serif;
+        font-family: $BelfairStyle;
         @include tabContent {
           width: 280px;
           height: 24px;
@@ -302,7 +329,7 @@ body {
         width: 445px;
         height: 172px;
         font-size: clamp(130px, 2px, 150px);
-        font-family: "Barlow Condensed", sans-serif;
+        font-family: $BarlowStyle;
         @include tabContent {
           text-align: center;
           max-width: 375px;
@@ -333,7 +360,7 @@ body {
       .exp_box {
         font-size: 32px;
         letter-spacing: 2px;
-        font-family: "Bellefair", serif;
+        font-family: $BelfairStyle;
         width: 274px;
         height: 274px;
         margin-bottom: 80px;
@@ -346,7 +373,7 @@ body {
           width: 150px;
           height: 150px;
         }
-        background-color: #ffffff;
+        background-color: $colorWhite;
         border-radius: 50%;
         color: #0b0d17;
         @include flexDesign(row, center, center);
@@ -358,6 +385,11 @@ body {
       }
     }
   }
+
+  /*home section design*/
+
+  /*planet section design*/
+
   .planetContaining {
     width: 100%;
     height: 100%;
@@ -400,13 +432,13 @@ body {
             color: #ffffff3d;
           }
           .text {
-            color: #ffffff;
+            color: $colorWhite;
           }
           .num,
           .text {
             font-size: clamp(24px, 1px, 28px);
             word-spacing: 4.75px;
-            font-family: "Bellefair", serif;
+            font-family: $BelfairStyle;
             @include tabContent {
               font-size: 20px;
             }
@@ -448,10 +480,10 @@ body {
         width: 55%;
         height: 34px;
         @include flexDesign(row, space-between, flex-start);
-        color: #ffffff;
+        color: $colorWhite;
         font-size: 16px;
         letter-spacing: 2.35px;
-        font-family: "Barlow Condensed", sans-serif;
+        font-family: $BarlowStyle;
         position: relative;
         top: -90px;
         left: -10%;
@@ -480,7 +512,7 @@ body {
             display: none;
             width: 41px;
             height: 3px;
-            background-color: #ffffff;
+            background-color: $colorWhite;
             position: absolute;
             top: 30px;
             left: -1px;
@@ -491,7 +523,7 @@ body {
             display: none;
             width: 41px;
             height: 3px;
-            background-color: #ffffff;
+            background-color: $colorWhite;
             position: absolute;
             top: 30px;
             left: -1px;
@@ -502,7 +534,7 @@ body {
             display: none;
             width: 56px;
             height: 3px;
-            background-color: #ffffff;
+            background-color: $colorWhite;
             position: absolute;
             top: 30px;
             left: -1px;
@@ -513,7 +545,7 @@ body {
             display: none;
             width: 43px;
             height: 3px;
-            background-color: #ffffff;
+            background-color: $colorWhite;
             position: absolute;
             top: 30px;
             left: -1px;
@@ -529,8 +561,8 @@ body {
     .currentPlanetName {
       width: 100%;
       font-size: 100px;
-      font-family: "Bellefair", serif;
-      color: #ffffff;
+      font-family: $BelfairStyle;
+      color: $colorWhite;
       text-transform: uppercase;
       position: relative;
       top: -70px;
@@ -608,15 +640,15 @@ body {
         .dstDes,
         .timeDesc {
           font-size: 14px;
-          font-family: "Barlow Condensed", sans-serif;
+          font-family: $BarlowStyle;
           color: #d0d6f9;
           margin-bottom: 10px;
         }
         .dstNum,
         .timeNum {
           font-size: 28px;
-          font-family: "Bellefair", serif;
-          color: #ffffff;
+          font-family: $BelfairStyle;
+          color: $colorWhite;
           text-transform: uppercase;
           @include tabContent {
             font-size: 20px;
@@ -638,6 +670,10 @@ body {
     }
   }
 }
+/*planet section design*/
+/*home section and planet section design*/
+
+/*crew section design*/
 .crew_section {
   visibility: hidden;
   @include flexDesign(row, space-around, flex-end);
@@ -672,14 +708,14 @@ body {
         }
       }
       .text {
-        color: #ffffff;
+        color: $colorWhite;
         text-transform: uppercase;
       }
       .num,
       .text {
         font-size: clamp(24px, 1px, 28px);
         word-spacing: 4.75px;
-        font-family: "Bellefair", serif;
+        font-family: $BelfairStyle;
         @include tabContent {
           font-size: 20px;
         }
@@ -701,7 +737,7 @@ body {
         top: 350px;
       }
       .crew_position {
-        font-family: "Bellefair", serif;
+        font-family: $BelfairStyle;
         font-size: 30px;
         text-transform: uppercase;
         color: #ffffff65;
@@ -722,8 +758,8 @@ body {
         }
       }
       .crew_member_name {
-        color: #ffffff;
-        font-family: "Bellefair", serif;
+        color: $colorWhite;
+        font-family: $BelfairStyle;
         text-transform: uppercase;
         font-size: 56px;
         position: absolute;
@@ -745,9 +781,9 @@ body {
         }
       }
       .commander_info {
-        color: #ffffff;
+        color: $colorWhite;
         width: 70%;
-        font-family: "Barlow Condensed", sans-serif;
+        font-family: $BarlowStyle;
         text-transform: uppercase;
         font-size: 18px;
         position: absolute;
@@ -802,7 +838,7 @@ body {
         }
       }
       .active {
-        background-color: #ffffff;
+        background-color: $colorWhite;
       }
       @include tabContent {
         width: 100%;
@@ -842,6 +878,9 @@ body {
 .showCrew {
   visibility: visible;
 }
+/*crew section design*/
+
+/*technology section design*/
 .technology_section {
   visibility: hidden;
   .technology_text {
@@ -869,14 +908,14 @@ body {
         }
       }
       .text {
-        color: #ffffff;
+        color: $colorWhite;
         text-transform: uppercase;
       }
       .num,
       .text {
         font-size: clamp(24px, 1px, 28px);
         word-spacing: 4.75px;
-        font-family: "Bellefair", serif;
+        font-family: $BelfairStyle;
         @include tabContent {
           font-size: 20px;
         }
@@ -909,12 +948,12 @@ body {
           border: 3px solid #ffffff49;
           @include flexDesign(row, center, center);
           margin-left: 15%;
-          font-family: "Bellefair", serif;
+          font-family: $BelfairStyle;
           font-size: 32px;
-          color: #ffffff;
+          color: $colorWhite;
           cursor: pointer;
           &:hover {
-            border: 3px solid #ffffff;
+            border: 3px solid $colorWhite;
           }
           @include tabContent {
             width: 58px;
@@ -923,7 +962,7 @@ body {
           }
         }
         .active {
-          background-color: #ffffff;
+          background-color: $colorWhite;
           color: #0b0d17;
         }
       }
@@ -938,17 +977,17 @@ body {
           top: 380px;
         }
         .desc_sub_header {
-          font-family: "Barlow Condensed", sans-serif;
+          font-family: $BarlowStyle;
           font-size: 16px;
           color: #d0d6f9;
           text-transform: uppercase;
         }
         .desc_header {
-          font-family: "Bellefair", serif;
+          font-family: $BelfairStyle;
           font-size: 56px;
           text-transform: uppercase;
           text-align: justify;
-          color: #ffffff;
+          color: $colorWhite;
           position: absolute;
           top: 40px;
           @include tabContent {
@@ -961,8 +1000,8 @@ body {
         }
         .vehicle_info {
           @include flexDesign(row, flex-start, flex-start);
-          font-family: "Barlow Condensed", sans-serif;
-          color: #ffffff;
+          font-family: $BarlowStyle;
+          color: $colorWhite;
           text-align: justify;
           position: absolute;
           top: 180px;
@@ -1002,3 +1041,4 @@ body {
 .showTechnology {
   visibility: visible;
 }
+/*technology section design*/
